@@ -7,3 +7,10 @@ edition = "2021"
 anyhow = "1.0.86"
 clap = { version = "4", features = ["derive"] }
 tokio = { version = "1.38.1", features = [ "rt-multi-thread", "macros", "net", "io-util" ] }
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
